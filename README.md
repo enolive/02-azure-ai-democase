@@ -4,7 +4,7 @@
 - Form/Text Recognition with Document Intelligence
 - Storage account triggers
 - Azure functions (Python)
-- Running Large-Language models on Azure (Cognitive Accounts, Cognitive Deployments)
+- Running Large-Language models on Azure Foundry
 - Use Azure Functions as tools for an LLM
 - Azure AI Search
 - Azure AI Bot Service
