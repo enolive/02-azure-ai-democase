@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Azure Functions
+bin
+obj
+appsettings.json
+local.settings.json
+
+# Python
+.venv/
+venv/
+env/
+.python_version
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Azure Functions local runtime
+.azurite/
+__blobstorage__/
+__queuestorage__/
+__azurite_db*__.json
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
