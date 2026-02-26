@@ -49,6 +49,12 @@ variable "processed_container_name" {
   default     = "processed-data"
 }
 
+variable "model_analysis_container_name" {
+  description = "Name of the model analysis results blob container"
+  type        = string
+  default     = "model-analysis-results"
+}
+
 variable "tags" {
   description = "Tags to apply to resources"
   type        = map(string)

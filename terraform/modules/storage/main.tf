@@ -33,3 +33,10 @@ resource "azurerm_storage_container" "processed" {
   storage_account_id    = azurerm_storage_account.storage.id
   container_access_type = "private"
 }
+
+# Blob Container for Model Analysis Results
+resource "azurerm_storage_container" "model_analysis" {
+  name                  = var.model_analysis_container_name
+  storage_account_id    = azurerm_storage_account.storage.id
+  container_access_type = "private"
+}

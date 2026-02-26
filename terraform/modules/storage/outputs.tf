@@ -29,3 +29,8 @@ output "processed_container_name" {
   description = "Name of the processed data container"
   value       = azurerm_storage_container.processed.name
 }
+
+output "model_analysis_container_name" {
+  description = "Name of the model analysis results container"
+  value       = azurerm_storage_container.model_analysis.name
+}
