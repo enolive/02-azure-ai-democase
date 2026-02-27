@@ -327,7 +327,7 @@ async def messages(req: func.HttpRequest) -> func.HttpResponse:
 
                     reply_url = f"{service_url.rstrip('/')}/v3/conversations/{conversation_id}/activities"
                     try:
-                        credential = get_credential()
+                        credential = get_bot_credential()
                         token = credential.get_token(
                             "https://api.botframework.com/.default"
                         ).token

@@ -29,12 +29,6 @@ provider "azurerm" {
 # Data source for current Azure configuration
 data "azurerm_client_config" "current" {}
 
-# Used as SQL AAD admin to allow GitHub Actions to create database users
-data "azurerm_user_assigned_identity" "github_actions" {
-  name                = "id-ccworkshop-github"
-  resource_group_name = var.nonprod_acr_resource_group # Same RG as bootstrap resources
-}
-
 # Resource Group
 resource "azurerm_resource_group" "rg" {
   name     = "${var.unique_variable_name_suffix}-rg-${var.project_name}"

@@ -21,7 +21,7 @@ output "primary_key" {
 
 output "query_key" {
   description = "Primary query key"
-  value       = azurerm_search_service.search.query_keys[0].value
+  value       = azurerm_search_service.search.query_keys[0].key
   sensitive   = true
 }
 
