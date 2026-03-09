@@ -131,22 +131,17 @@ module "function_app" {
   doc_intelligence_id       = module.document_intelligence.id
 
   # Azure OpenAI configuration
-  azure_openai_endpoint        = module.openai.endpoint
-  azure_openai_api_key         = module.openai.primary_access_key
-  azure_openai_deployment_name = module.openai.gpt4_deployment_name
-  azure_openai_id              = module.openai.id
-  azure_openai_api_version     = "2025-01-01-preview"
+  openai_endpoint        = module.openai.endpoint
+  openai_api_key         = module.openai.primary_access_key
+  openai_api_version     = "2025-01-01-preview"
+  openai_chat_deployment = module.openai.gpt4_deployment_name
+  openai_id              = module.openai.id
+  openai_embedding_deployment = module.openai.embedding_deployment_name
 
   # Container names
   input_container_name          = module.storage.claims_container_name
   output_container_name         = module.storage.processed_container_name
   model_analysis_container_name = module.storage.model_analysis_container_name
-
-  # OpenAI configuration
-  openai_endpoint             = module.openai.endpoint
-  openai_chat_deployment      = module.openai.gpt4_deployment_name
-  openai_embedding_deployment = module.openai.embedding_deployment_name
-  openai_id                   = module.openai.id
 
   # Search configuration
   search_endpoint = module.search.endpoint
