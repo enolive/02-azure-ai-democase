@@ -56,7 +56,19 @@ jobs:
         run: |
           FUNCTION_APP_NAME="${{ vars.UNIQUE_SUFFIX }}-func-${{ vars.PROJECT_NAME || 'frauddetect' }}"
           echo "Deploying to: ${FUNCTION_APP_NAME}"
-          func azure functionapp publish "${FUNCTION_APP_NAME}" --python
+          for attempt in 1 2 3; do
+            echo "Deployment attempt ${attempt}..."
+            if func azure functionapp publish "${FUNCTION_APP_NAME}" --python --build remote; then
+              echo "Deployment succeeded on attempt ${attempt}"
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "Deployment failed, retrying in 30s..."
+              sleep 30
+            fi
+          done
+          echo "Deployment failed after 3 attempts"
+          exit 1
 
       - name: Print Function App URL
         run: |
