@@ -1,0 +1,15 @@
+{
+  "keyword_checks": [
+    {
+      "keywords": ["urgent", "immediate payment"],
+      "indicator": "Urgent language detected"
+    }
+  ],
+  "date_comparison_checks": [
+    {
+      "earlier_field": "invoice date",
+      "later_field": "incident date",
+      "indicator": "Invoice date before incident date"
+    }
+  ]
+}

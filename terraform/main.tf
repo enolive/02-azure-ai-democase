@@ -124,15 +124,14 @@ module "function_app" {
   # Data storage configuration
   data_storage_connection_string = module.storage.primary_connection_string
   data_storage_account_id        = module.storage.storage_account_id
+  data_storage_account_name      = module.storage.storage_account_name
 
   # Document Intelligence configuration
   doc_intelligence_endpoint = module.document_intelligence.endpoint
-  doc_intelligence_key      = module.document_intelligence.primary_access_key
   doc_intelligence_id       = module.document_intelligence.id
 
   # Azure OpenAI configuration
   openai_endpoint        = module.openai.endpoint
-  openai_api_key         = module.openai.primary_access_key
   openai_api_version     = "2025-01-01-preview"
   openai_chat_deployment = module.openai.gpt4_deployment_name
   openai_id              = module.openai.id
