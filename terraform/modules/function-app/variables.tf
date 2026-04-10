@@ -56,15 +56,14 @@ variable "data_storage_account_id" {
   type        = string
 }
 
-variable "doc_intelligence_endpoint" {
-  description = "Document Intelligence endpoint URL"
+variable "data_storage_account_name" {
+  description = "Name of the data storage account (used to construct the blob endpoint URL for managed identity auth)"
   type        = string
 }
 
-variable "doc_intelligence_key" {
-  description = "Document Intelligence API key"
+variable "doc_intelligence_endpoint" {
+  description = "Document Intelligence endpoint URL"
   type        = string
-  sensitive   = true
 }
 
 variable "doc_intelligence_id" {
@@ -75,24 +74,18 @@ variable "doc_intelligence_id" {
 variable "input_container_name" {
   description = "Name of the blob container for input PDFs"
   type        = string
-  default     = "claims"
+  default     = "insurance-claims"
 }
 
 variable "output_container_name" {
   description = "Name of the blob container for processed results"
   type        = string
-  default     = "processed"
+  default     = "processed-data"
 }
 
 variable "openai_endpoint" {
   description = "Azure OpenAI endpoint URL"
   type        = string
-}
-
-variable "openai_api_key" {
-  description = "Azure OpenAI API key"
-  type        = string
-  sensitive   = true
 }
 
 variable "openai_api_version" {
